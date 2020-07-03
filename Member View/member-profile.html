@@ -23,15 +23,15 @@
       <!-- Back button and Heading -->
       <nav id="Nav">
         <a href="#">
-          <span class="material-icons text-dark" id="backIcon">arrow_back_ios</span>
+          <i class="material-icons text-dark" id="back-icon">arrow_back_ios</i>
         </a>
         <p class="text-uppercase text-center font-weight-bold">Member Profile</p>
       </nav>
 
       <!-- Profile pic, Name and Organisation -->
       <div class="d-flex flex-column align-items-center">
-        <img class="mb-1" src="https://keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg" alt="profile-image" id="profile-image">
-        <span class="font-weight-bold">{{ fullName }}</span>
+        <img class="mb-1 shadow-sm" src="https://keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg" alt="profile-image" id="profile-image">
+        <span class="font-weight-bold lead">{{ fullName }}</span>
         <span class="text-muted small">{{ firmName }}</span>
       </div>
 
@@ -58,9 +58,22 @@
       <p class="text-center" v-if="!dataReceived">Loading...</p>
       <div id="memberFullDetails" v-else>
         <div v-for="detail in sortedData">
-          <p class="mb-0 bold">{{ detail[0] }}</p>
-          <p class="text-muted mb-2">{{ detail[1] || "Not available"}}</p>
+          <p class="text-muted subheading-font mb-0">{{ detail[0] }}</p>
+          <p class="mb-2">{{ detail[1] || "Not available"}}</p>
         </div> 
+      </div>
+
+      <!-- Quick CTA Buttons -->
+      <div class="fixed-bottom mb-2 d-flex align-items-center justify-content-center" id="ctaBtns">
+        <button class="btn">
+          <i class="shadow-sm material-icons rounded-circle btn-bg-1">email</i>
+        </button>
+        <button class="btn">
+          <i class="shadow-sm material-icons rounded-circle btn-bg-1">call</i>
+        </button>
+        <button class="shadow bg-white-rounded btn btn-bg-2 rounded-pill text-white ml-2">
+          <span>Send Reference</span>
+        </button>
       </div>
     </div>    
 
