@@ -60,5 +60,7 @@ let app = new Vue({
   },
   mounted() {
     this.getMembers();
+    let bottomNavbarHeight = document.getElementById("ctaBtns");  
+    document.getElementById("pageOffset").style.height = bottomNavbarHeight.offsetHeight + "px";
   }
 });

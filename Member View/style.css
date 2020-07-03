@@ -1,5 +1,6 @@
 nav {
   position: relative;
+  background-color: rgba(255, 255, 255, 1);
 }
 
 nav a {
@@ -32,4 +33,14 @@ nav a {
   height: 42px;
   font-size: 12px;
   background-color: #091440
+}
+
+#ctaBtns {
+  /* background: rgba(255, 255, 255, 0.9); */
+  background-image: linear-gradient(to top, #fff, #fff, rgba(255, 255, 255, 0.4));
+
+}
+
+.btn-shadow {
+  box-shadow: -1px 2px 8px 1px #888; 
 }

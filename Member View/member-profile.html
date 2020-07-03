@@ -21,7 +21,7 @@
     <div class="container mt-3" id="app">
 
       <!-- Back button and Heading -->
-      <nav id="Nav">
+      <nav class="sticky-top" id="Nav">
         <a href="#">
           <i class="material-icons text-dark" id="back-icon">arrow_back_ios</i>
         </a>
@@ -29,28 +29,30 @@
       </nav>
 
       <!-- Profile pic, Name and Organisation -->
-      <div class="d-flex flex-column align-items-center">
-        <img class="mb-1 shadow-sm" src="https://keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg" alt="profile-image" id="profile-image">
-        <span class="font-weight-bold lead">{{ fullName }}</span>
-        <span class="text-muted small">{{ firmName }}</span>
-      </div>
-
-      <!-- Member main details -->
-      <div class="d-flex border-bottom justify-content-around pb-3 mb-3" id="memberLottiePoints">
-        <div class="d-flex flex-column align-items-center points">
-          <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_nqlp2k.json"  background="transparent"  speed="1"  style="width: 50px; height: 50px;" autoplay></lottie-player>
-          <span class="font-weight-bold">{{ points }}</span>
-          <span class="text-muted small">Points</span>
+      <div id="memberOverview">
+        <div class="d-flex flex-column align-items-center">
+          <img class="mb-1 shadow-sm" src="https://keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg" alt="profile-image" id="profile-image">
+          <span class="font-weight-bold lead">{{ fullName }}</span>
+          <span class="text-muted small">{{ firmName }}</span>
         </div>
-        <div class="d-flex flex-column align-items-center points">
-          <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_9sXk9i.json"  background="transparent"  speed="1"  style="width: 50px; height: 50px;" autoplay></lottie-player>
-          <span class="font-weight-bold">&#8377;{{ business }}L</span>
-          <span class="text-muted small">Business</span>
-        </div>
-        <div class="d-flex flex-column align-items-center points">
-          <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_JLnT1f.json"  background="transparent"  speed="1"  style="width: 50px; height: 50px;" autoplay></lottie-player>
-          <span class="font-weight-bold">{{ references }}</span>
-          <span class="text-muted small">References</span>
+  
+        <!-- Member main details -->
+        <div class="d-flex border-bottom justify-content-around pb-3 mb-3" id="memberLottiePoints">
+          <div class="d-flex flex-column align-items-center points">
+            <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_nqlp2k.json"  background="transparent"  speed="1"  style="width: 50px; height: 50px;" autoplay></lottie-player>
+            <span class="font-weight-bold">{{ points }}</span>
+            <span class="text-muted small">Points</span>
+          </div>
+          <div class="d-flex flex-column align-items-center points">
+            <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_9sXk9i.json"  background="transparent"  speed="1"  style="width: 50px; height: 50px;" autoplay></lottie-player>
+            <span class="font-weight-bold">&#8377;{{ business }}L</span>
+            <span class="text-muted small">Business</span>
+          </div>
+          <div class="d-flex flex-column align-items-center points">
+            <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_JLnT1f.json"  background="transparent"  speed="1"  style="width: 50px; height: 50px;" autoplay></lottie-player>
+            <span class="font-weight-bold">{{ references }}</span>
+            <span class="text-muted small">References</span>
+          </div>
         </div>
       </div>
 
@@ -60,18 +62,21 @@
         <div v-for="detail in sortedData">
           <p class="text-muted subheading-font mb-0">{{ detail[0] }}</p>
           <p class="mb-2">{{ detail[1] || "Not available"}}</p>
-        </div> 
+        </div>
       </div>
 
+      <!-- Page Offset -->
+      <div id="pageOffset"></div> 
+
       <!-- Quick CTA Buttons -->
-      <div class="fixed-bottom mb-2 d-flex align-items-center justify-content-center" id="ctaBtns">
+      <div class="fixed-bottom py-2 d-flex align-items-center justify-content-center" id="ctaBtns">
         <button class="btn">
-          <i class="shadow-sm material-icons rounded-circle btn-bg-1">email</i>
+          <i class="btn-shadow material-icons rounded-circle btn-bg-1">email</i>
         </button>
         <button class="btn">
-          <i class="shadow-sm material-icons rounded-circle btn-bg-1">call</i>
+          <i class="btn-shadow material-icons rounded-circle btn-bg-1">call</i>
         </button>
-        <button class="shadow bg-white-rounded btn btn-bg-2 rounded-pill text-white ml-2">
+        <button class="btn-shadow bg-white-rounded btn btn-bg-2 rounded-pill text-white ml-2">
           <span>Send Reference</span>
         </button>
       </div>
