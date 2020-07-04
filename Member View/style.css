@@ -45,3 +45,27 @@ nav a {
 .btn-shadow {
   box-shadow: -1px 2px 8px 1px #888; 
 }
+
+
+lottie-player {
+  width: 60px;
+  height: 60px;
+}
+
+#secondLottiePlayer {
+  transform: scale(0.5);
+}
+
+#thirdLottiePlayer {
+  transform: scale(0.8);
+}
+
+.ptsAlign {
+  position: relative;
+  top: -12px;
+}
+
+.ptsTxt {
+  position: relative;
+  top: -3px;
+}

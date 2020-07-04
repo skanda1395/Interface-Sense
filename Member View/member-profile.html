@@ -40,21 +40,27 @@
         </div>
   
         <!-- Member main details -->
-        <div class="d-flex border-bottom justify-content-around pb-3 mb-3" id="memberLottiePoints">
-          <div class="d-flex flex-column align-items-center points">
-            <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_nqlp2k.json"  background="transparent"  speed="1"  style="width: 50px; height: 50px;" autoplay></lottie-player>
-            <span class="font-weight-bold">{{ points }}</span>
-            <span class="text-muted small">Points</span>
+        <div class="d-flex border-bottom justify-content-around pb-1 mb-3" id="memberLottiePoints">
+          <div class="d-flex flex-column align-items-center">
+            <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_nqlp2k.json"  background="transparent"  speed="1" autoplay></lottie-player>
+            <div class="ptsAlign d-flex flex-column align-items-center">
+              <span class="font-weight-bold">{{ points }}</span>
+              <span class="ptsTxt text-muted small">Points</span>
+            </div>
           </div>
-          <div class="d-flex flex-column align-items-center points">
-            <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_9sXk9i.json"  background="transparent"  speed="1"  style="width: 50px; height: 50px;" autoplay></lottie-player>
-            <span class="font-weight-bold">&#8377;{{ business }}L</span>
-            <span class="text-muted small">Business</span>
+          <div class="d-flex flex-column align-items-center">
+            <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_9sXk9i.json" id="secondLottiePlayer" background="transparent"  speed="1" autoplay></lottie-player>
+            <div class="ptsAlign d-flex flex-column align-items-center">
+              <span class="font-weight-bold">&#8377;{{ business }}L</span>
+              <span class="ptsTxt text-muted small">Business</span>
+            </div>
           </div>
-          <div class="d-flex flex-column align-items-center points">
-            <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_JLnT1f.json"  background="transparent"  speed="1"  style="width: 50px; height: 50px;" autoplay></lottie-player>
-            <span class="font-weight-bold">{{ references }}</span>
-            <span class="text-muted small">References</span>
+          <div class="d-flex flex-column align-items-center">
+            <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_JLnT1f.json" id="thirdLottiePlayer" background="transparent"  speed="1" autoplay></lottie-player>
+            <div class="ptsAlign d-flex flex-column align-items-center">
+              <span class="font-weight-bold">{{ references }}</span>
+              <span class="ptsTxt text-muted small">References</span>
+            </div>
           </div>
         </div>
       </div>
@@ -90,7 +96,7 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
