@@ -38,7 +38,7 @@ nav a {
 }
 
 #ctaBtns {
-  background-image: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.4));
+  background-image: linear-gradient(to top, #fff, #fff, rgba(255, 255, 255, 0.4));
   width: 100%;
 }
 
