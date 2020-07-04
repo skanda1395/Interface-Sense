@@ -18,15 +18,18 @@
   </head>
   <body>
     <!-- Put everthing in a container to center it -->
-    <div class="container mt-3" id="app">
+    <div class="container" id="app">
 
       <!-- Back button and Heading -->
-      <nav class="sticky-top" id="Nav">
+      <nav class="fixed-top d-flex align-items-center justify-content-center" id="Nav">
         <a href="#">
           <i class="material-icons text-dark" id="back-icon">arrow_back_ios</i>
         </a>
-        <p class="text-uppercase text-center font-weight-bold">Member Profile</p>
+        <span class="text-uppercase text-center font-weight-bold">Member Profile</span>
       </nav>
+
+      <!-- Page Offset -->
+      <div id="pageOffsetTop"></div>
 
       <!-- Profile pic, Name and Organisation -->
       <div id="memberOverview">

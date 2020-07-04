@@ -60,7 +60,10 @@ let app = new Vue({
   },
   mounted() {
     this.getMembers();
-    let bottomNavbarHeight = document.getElementById("ctaBtns");  
-    document.getElementById("pageOffset").style.height = bottomNavbarHeight.offsetHeight + "px";
+    let bottomNavbarHeight = document.getElementById("ctaBtns").offsetHeight;  
+    let topNavBarHeight = document.getElementById("Nav").offsetHeight;
+    // console.log('Header: ', topNavBarHeight, topNavBarHeight.offsetHeight);
+    document.getElementById("pageOffsetTop").style.height = topNavBarHeight + "px";
+    document.getElementById("pageOffset").style.height = bottomNavbarHeight + "px";
   }
 });
