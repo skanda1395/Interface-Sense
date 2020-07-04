@@ -38,17 +38,13 @@ nav a {
 }
 
 #ctaBtns {
-  /* background: rgba(255, 255, 255, 0.9); */
   background-image: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.4));
-  /* background-color: antiquewhite; */
   width: 100%;
-
 }
 
 .btn-shadow {
   box-shadow: -1px 2px 8px 1px #888; 
 }
-
 
 lottie-player {
   width: 60px;
