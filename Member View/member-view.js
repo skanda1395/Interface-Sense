@@ -23,7 +23,7 @@ let app = new Vue({
         this.memberData = data[0];
         this.sortData(this.memberData);
         this.dataReceived = true;
-        console.log(data[0]);
+        // console.log(data[0]);
       })
       .catch(error => {
         console.error(
@@ -60,9 +60,9 @@ let app = new Vue({
   },
   mounted() {
     this.getMembers();
-    let bottomNavbarHeight = document.getElementById("ctaBtns").offsetHeight;  
     let topNavBarHeight = document.getElementById("Nav").offsetHeight;
     document.getElementById("pageOffsetTop").style.height = topNavBarHeight + "px";
+    let bottomNavbarHeight = document.getElementById("ctaBtns").offsetHeight;  
     document.getElementById("pageOffset").style.height = bottomNavbarHeight + "px";
   }
 });
