@@ -97,5 +97,7 @@ let app = new Vue({
   },
   mounted() {
     this.getMembers();
+    let topNavBarHeight = document.getElementById("searchDiv").offsetHeight;
+    document.getElementById("offsetTop").style.height = topNavBarHeight + "px";
   }
 });

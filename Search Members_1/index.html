@@ -17,8 +17,10 @@
     <!-- Search box-->
     <div class="container" id="app"> 
       <div class="row">
-        <div class="mx-auto col-lg-6">
-          <div class="input-group my-4">
+        <!-- Offset Div -->
+        <div id="offsetTop"></div>
+        <div class="mx-auto col-lg-6 fixed-top bg-white" id="searchDiv">
+          <div class="input-group my-3">
             <div class="input-group-prepend">
               <span class="input-group-text text-secondary rounded-pill border-right-0" :class="{ 'icon-border': focus }" id="basic-addon1">
                 <i class="material-icons">search</i>
@@ -26,7 +28,7 @@
             </div>
             <input id="search-box" type="search" class="form-control rounded-pill border-left-0 pl-0" placeholder="Search to select member" @keyup="filterList" v-model="inputName" @click="focus=true">
             <div class="input-group-append">
-              <span class="input-group-text text-secondary " id="close-list-btn" @click="focus=false">close</button>
+              <span class="input-group-text text-secondary px-0 ml-2" id="close-list-btn" @click="focus=false">close</button>
             </div>  
           </div>
         </div>
