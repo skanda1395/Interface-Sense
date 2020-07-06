@@ -3,6 +3,10 @@
   border-bottom-right-radius: 0 !important;
 }
 
+#basic-addon1,  input[type="search"] { 
+  background-color: #fafafa !important;
+}
+
 input[type="search"] {
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
@@ -23,6 +27,7 @@ input[type="search"]::-webkit-search-cancel-button {
 
 #close-list-btn {
   border: 0;
+  color: #9f9f9f;
   background-color: transparent;
   cursor: pointer;
 }

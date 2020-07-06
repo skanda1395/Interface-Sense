@@ -20,13 +20,13 @@
         <div class="mx-auto col-lg-6">
           <div class="input-group my-4">
             <div class="input-group-prepend">
-              <span class="input-group-text rounded-pill bg-white border-right-0" :class="{ 'icon-border': focus }" id="basic-addon1">
+              <span class="input-group-text text-secondary rounded-pill border-right-0" :class="{ 'icon-border': focus }" id="basic-addon1">
                 <i class="material-icons">search</i>
               </span>
             </div>
             <input id="search-box" type="search" class="form-control rounded-pill border-left-0 pl-0" placeholder="Search to select member" @keyup="filterList" v-model="inputName" @click="focus=true">
             <div class="input-group-append">
-              <span class="input-group-text" id="close-list-btn" @click="focus=false">close</button>
+              <span class="input-group-text text-secondary " id="close-list-btn" @click="focus=false">close</button>
             </div>  
           </div>
         </div>
