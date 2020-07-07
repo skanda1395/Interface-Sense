@@ -7,13 +7,13 @@ Vue.component('member', {
     }
   },
   template: `
-    <div class="d-flex border-bottom pb-2 member" @click="autocompleteName">
+    <div class="d-flex border-bottom py-2 member" @click="autocompleteName">
       <div class=" d-flex align-items-center img-container">
-        <img src="dummy-profile-image_1.png" alt="profile_pic">
+        <img :src="profile_pic" alt="profile_pic">
       </div>
-      <div class="d-flex flex-column pt-2 ml-2" id="name_org_container">
-        <span class="font-weight-bold name">{{ fullName }}</span>
-        <span class="text-muted small offsetY">{{ member.firmName }}</span>
+      <div class="d-flex flex-column py-2 ml-3" id="name_org_container">
+        <span class="name">{{ fullName }}</span>
+        <span class="firmName text-muted offsetY">{{ member.firmName }}</span>
       </div>
     </div>
   `,
@@ -27,6 +27,10 @@ Vue.component('member', {
     fullName() {
       return this.member.firstName + ' ' + this.member.lastName;
     },
+    profile_pic() {
+      let i = Math.floor(Math.random() * 2);
+      return (this.member.gender == "Female")? app.profile_women[i]: app.profile_men[i];
+    }
   }
 });
 
@@ -37,7 +41,9 @@ let app = new Vue({
     membersData: null,
     focus: false,
     inputName: "",
-    memberCount: null
+    memberCount: null,
+    profile_women: ['Profile Pics/woman_1.png', 'Profile Pics/woman_2.png'],
+    profile_men: ['Profile Pics/man_1.png', 'Profile Pics/man_2.png'],
   },
   computed: {
     resetFilter() {

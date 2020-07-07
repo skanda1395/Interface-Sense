@@ -1,3 +1,7 @@
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
 #basic-addon1 {
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
@@ -27,7 +31,8 @@ input[type="search"]::-webkit-search-cancel-button {
 
 #close-list-btn {
   border: 0;
-  color: #9f9f9f;
+  /* color: #9f9f9f; */
+  font-size: 16px;
   background-color: transparent;
   cursor: pointer;
 }
@@ -73,14 +78,14 @@ body::-webkit-scrollbar-thumb:hover {
 } */
 
 img {
-  width: 50px;
+  width: 54px;
   height: auto;
   border-radius: 50%;
 }
 
 .offsetY {
   position: relative;
-  top: -2px;
+  top: -4px;
 }
 
 #members-container {
@@ -90,4 +95,13 @@ img {
 
 i {
   font-size: 16px !important;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.firmName {
+  font-size: 15px;
 }
