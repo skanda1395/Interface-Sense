@@ -36,12 +36,8 @@ input[type="search"]::-webkit-search-cancel-button {
   color: red;
 }
 
-.profile-img {
-  height: 60px;
-}
-
 .member {
-  cursor: pointer
+  cursor: pointer;
 }
 
 body::-webkit-scrollbar {
@@ -70,4 +66,28 @@ body::-webkit-scrollbar-thumb:hover {
 
 #resetFilterOp {
   display: none;
+}
+
+/* .img-container {
+  width: 25%;
+} */
+
+img {
+  width: 50px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.offsetY {
+  position: relative;
+  top: -2px;
+}
+
+#members-container {
+  position: relative;
+  top: -7px;
+}
+
+i {
+  font-size: 16px !important;
 }

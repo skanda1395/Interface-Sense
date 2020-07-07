@@ -7,17 +7,13 @@ Vue.component('member', {
     }
   },
   template: `
-    <div class="member row py-2" @click="autocompleteName">
-      <div class="mx-auto col-lg-8">
-        <div class="border-bottom d-flex">
-          <div class="img-container mr-2">
-            <img class="profile-img img-fluid" src="profile-icon.png" alt="profile-icon">
-          </div>
-          <div class="content">
-            <dt>{{ fullName }}</dt>
-            <dd class="font-weight-light text-muted">{{ member.firmName }}</dd>
-          </div>
-        </div>
+    <div class="d-flex border-bottom pb-2 member" @click="autocompleteName">
+      <div class=" d-flex align-items-center img-container">
+        <img src="dummy-profile-image_1.png" alt="profile_pic">
+      </div>
+      <div class="d-flex flex-column pt-2 ml-2" id="name_org_container">
+        <span class="font-weight-bold name">{{ fullName }}</span>
+        <span class="text-muted small offsetY">{{ member.firmName }}</span>
       </div>
     </div>
   `,
@@ -84,7 +80,7 @@ let app = new Vue({
       this.memberCount = members.length;
       
       for(let i = 0; i < members.length; i++) {
-        let nameTag = members[i].getElementsByTagName("dt")[0];
+        let nameTag = members[i].getElementsByClassName("name")[0];
         if(nameTag.textContent.toUpperCase().indexOf(filterValue) > -1) {
           members[i].style.display = "";
         } 
