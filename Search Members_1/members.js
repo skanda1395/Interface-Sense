@@ -82,10 +82,11 @@ let app = new Vue({
       for(let i = 0; i < members.length; i++) {
         let nameTag = members[i].getElementsByClassName("name")[0];
         if(nameTag.textContent.toUpperCase().indexOf(filterValue) > -1) {
+          // console.log(members[i]);
           members[i].style.display = "";
         } 
         else {
-          members[i].style.display = "none";
+          members[i].style.setProperty("display", "none", "important");
           this.memberCount--;
         }
       }
