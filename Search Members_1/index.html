@@ -30,7 +30,7 @@
             </div>
             <input id="search-box" type="text" class="fc rounded-pill border-left-0 pl-0" placeholder="Search to select member" @keyup="filterList" v-model="inputName" @click="focus=true">
             <div class="input-group-append">
-              <img src="close-circle.svg" alt="clear_icon" id="clear_icon" v-if="focus" @click="inputName=''">
+              <img src="close-circle.svg" alt="clear_icon" id="clear_icon" v-if="focus" @click="clearAndFocus">
               <span class="input-group-text text-secondary" id="close-list-btn" @click="focus=false">close</button>
             </div>  
           </div>

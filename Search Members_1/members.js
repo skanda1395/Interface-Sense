@@ -96,6 +96,11 @@ let app = new Vue({
           this.memberCount--;
         }
       }
+    },
+    clearAndFocus() {
+      console.log('fired');
+      this.inputName = "";
+      document.getElementById("search-box").select();
     }
   },
   mounted() {
