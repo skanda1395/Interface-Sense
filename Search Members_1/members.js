@@ -58,7 +58,7 @@ let app = new Vue({
     },
     notMember() {
       return !this.memberCount? true: false;
-    }
+    },
   },
   methods: {
     getMembers() {
