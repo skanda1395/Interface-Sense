@@ -149,3 +149,9 @@ nav a {
 .tab.active::after {
   border-top: 5px solid #31399C;
 }
+
+#forward-icon {
+  position: absolute;
+  right: 0%;
+  font-size: 16px !important;
+}

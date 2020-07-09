@@ -7,7 +7,7 @@ Vue.component('member', {
     }
   },
   template: `
-    <div class="d-flex border-bottom py-2 member" @click="autocompleteName">
+    <div class="d-flex border-bottom py-2 align-items-center member" @click="autocompleteName">
       <div class=" d-flex align-items-center img-container">
         <img :src="profile_pic" alt="profile_pic">
       </div>
@@ -15,12 +15,16 @@ Vue.component('member', {
         <span class="name">{{ fullName }}</span>
         <span class="firmName text-muted offsetY">{{ member.firmName }}</span>
       </div>
+      <i class="material-icons text-muted" id="forward-icon" @click="loadMyPage">arrow_forward_ios</i>
     </div>
   `,
   methods: {
     autocompleteName() {
       app.inputName = this.fullName;
       app.focus = false;
+    },
+    loadMyPage() {
+      console.log('Take me to my page. This is my ID: ', this.ID);
     }
   },
   computed: {
@@ -80,7 +84,7 @@ let app = new Vue({
         );
       });
     },
-    filterList() {
+    filterList() {  
       let filterValue = this.inputName.toUpperCase();
       let membersList = document.getElementById("members-container");
       let members = membersList.querySelectorAll(".member");
@@ -99,7 +103,6 @@ let app = new Vue({
       }
     },
     clearAndFocus() {
-      console.log('fired');
       this.inputName = "";
       document.getElementById("search-box").select();
     },
