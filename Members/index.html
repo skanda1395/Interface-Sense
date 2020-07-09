@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Source Sans Pro Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Members</title>
+  </head>
+  <body>
+    <!-- Search box-->
+    <div id="app"> 
+      
+      <!-- Back button and Heading -->
+      <nav class="fixed-top bg-white d-flex align-items-center justify-content-center" id="Nav">
+        <a href="#">
+          <i class="material-icons text-dark" id="back-icon">arrow_back_ios</i>
+        </a>
+        <span class="text-uppercase text-center font-weight-bold">Members</span>
+      </nav>
+
+      <!-- Offset Div -->
+      <div id="offsetTop"></div>  
+
+      <!-- Tabs -->
+      <div class="d-flex justify-content-around border-top border-bottom pt-1" id="tabs">
+        <div class="tab">
+          First Name
+          <div class="tab-border"></div>
+        </div>
+        <div class="tab">
+          Last Name
+          <div class=""></div>
+        </div>
+        <div class="tab">
+          Company Name
+          <div class=""></div>
+        </div>
+      </div>
+
+      <!-- Search Box -->
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 px-3" id="searchDiv">
+            <div class="input-group input-group-sm my-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text rounded-pill border-right-0" id="basic-addon1">
+                  <i class="material-icons">search</i>
+                </span>
+              </div>
+              <input id="search-box" type="text" class="fc rounded-pill border-left-0 pl-0" placeholder="Search to select member" @keyup="filterList" v-model="inputName" @click="focus=true">
+              <img src="close-circle.svg" alt="clear_icon" id="clear_icon" v-if="focus" @click="clearAndFocus">
+
+              <!-- <div class="input-group-append">
+                <img src="close-circle.svg" alt="clear_icon" id="clear_icon" v-if="focus" @click="clearAndFocus">
+                <span class="input-group-text text-secondary" id="close-list-btn" @click="focus=false">close</button>
+              </div>   -->
+            </div>
+          </div>
+        </div>
+  
+        <div id="members-container" v-if="focus">
+          <member v-for="member in membersData" :member="member" id="member.memberId"></member>
+          <p class="text-center text-monospace" v-if="notMember">No such member</p>
+        </div>
+  
+        <p id="resetFilterOp">{{ resetFilter }}</p>
+      </div>
+      
+
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="members.js"></script>
+  </body>
+</html>
