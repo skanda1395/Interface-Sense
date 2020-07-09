@@ -24,26 +24,17 @@
         <a href="#">
           <i class="material-icons text-dark" id="back-icon">arrow_back_ios</i>
         </a>
-        <span class="text-uppercase text-center font-weight-bold">Members</span>
+        <span class="text-uppercase text-center font-weight-bold">Members Directory</span>
       </nav>
 
       <!-- Offset Div -->
       <div id="offsetTop"></div>  
 
       <!-- Tabs -->
-      <div class="d-flex justify-content-around border-top border-bottom pt-1" id="tabs">
-        <div class="tab">
-          First Name
-          <div class="tab-border"></div>
-        </div>
-        <div class="tab">
-          Last Name
-          <div class=""></div>
-        </div>
-        <div class="tab">
-          Company Name
-          <div class=""></div>
-        </div>
+      <div class="d-flex justify-content-around border-top border-bottom pt-1" id="tabs" @click="selectTab($event)">
+        <div class="tab active">First Name</div>
+        <div class="tab">Last Name</div>
+        <div class="tab">Company Name</div>
       </div>
 
       <!-- Search Box -->

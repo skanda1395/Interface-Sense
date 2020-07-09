@@ -44,6 +44,7 @@ let app = new Vue({
     memberCount: null,
     profile_women: ['Profile Pics/woman_1.png', 'Profile Pics/woman_2.png'],
     profile_men: ['Profile Pics/man_1.png', 'Profile Pics/man_2.png'],
+    selectedTab: ""
   },
   computed: {
     resetFilter() {
@@ -58,7 +59,7 @@ let app = new Vue({
     },
     notMember() {
       return !this.memberCount? true: false;
-    },
+    }
   },
   methods: {
     getMembers() {
@@ -101,6 +102,18 @@ let app = new Vue({
       console.log('fired');
       this.inputName = "";
       document.getElementById("search-box").select();
+    },
+    selectTab(e) {
+      if(e.target.classList.contains("tab")) {
+        this.selectedTab = e.target.textContent;
+        console.log('yo', this.selectedTab);
+        const activeTab = document.querySelector(".active");
+        if(e.target == activeTab) return;
+        else {
+          activeTab.classList.remove("active");
+          e.target.classList.add("active");
+        }
+      }
     }
   },
   mounted() {

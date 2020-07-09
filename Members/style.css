@@ -138,8 +138,14 @@ nav a {
   font-weight: 600;
 }
 
-.tab-border {
-  border-top: 5px solid #31399C;
+.tab::after {
+  content: "";
+  width: 100%;
+  display: block;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+}
+
+.tab.active::after {
+  border-top: 5px solid #31399C;
 }
