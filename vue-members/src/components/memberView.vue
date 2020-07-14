@@ -110,7 +110,7 @@ export default {
       arr.push(["Pincode", member?.zipCode || this.noData]);
       arr.push(["Secondary Address", member?.businessAddressLine2 || this.noData]);
       arr.push(["Primary Business", member?.businessCategory?.value || this.noData]);
-      arr.push(["Secondary Address", member?.secondaryBusiness || this.noData]);
+      arr.push(["Secondary Business", member?.secondaryBusiness || this.noData]);
       arr.push(["About the business", member?.aboutTheBusiness || this.noData]);
     }
   },
