@@ -18,6 +18,7 @@
         <span class="font-weight-bold lead">{{ fullName }}</span>
         <span class="text-muted small">{{ firmName }}</span>
       </div>
+
       <!-- Member Main Details -->
       <div class="d-flex border-bottom justify-content-around pb-1 mb-3" id="memberLottiePoints">
         <div class="d-flex flex-column align-items-center">
@@ -43,6 +44,7 @@
         </div>
       </div>
     </div>
+
     <!-- Member Full Details -->
     <div id="memberFullDetails">
       <div v-for="(detail, index) in sortedData" :key="index">
@@ -50,7 +52,22 @@
         <p class="mb-2">{{ detail[1] }}</p>
       </div>
     </div>
+    
+    <!-- Page Offset Bottom -->
+    <div id="pageOffset"></div> 
 
+    <!-- Quick CTA Buttons -->
+    <div class="fixed-bottom py-2 d-flex align-items-center justify-content-center" id="ctaBtns">
+      <button class="btn">
+        <i class="btn-shadow material-icons rounded-circle btn-bg-1">email</i>
+      </button>
+      <button class="btn">
+        <i class="btn-shadow material-icons rounded-circle btn-bg-1">call</i>
+      </button>
+      <button class="btn-shadow bg-white-rounded btn btn-bg-2 rounded-pill text-white ml-2">
+        <span>Send Reference</span>
+      </button>
+    </div>
   </div>
 </template>
 
@@ -180,6 +197,9 @@ export default {
     top: -3px;
   }
   #pageOffsetTop {
+    height: 60px;
+  }
+  #pageOffset {
     height: 60px;
   }
 </style>
