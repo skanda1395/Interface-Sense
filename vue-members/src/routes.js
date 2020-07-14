@@ -3,5 +3,5 @@ import memberView from './components/memberView.vue'
 
 export default [
   { path: '/', component: searchMembers },
-  { path: '/memberView', component: memberView, name: 'memberView', props: true }
+  { path: '/:id', component: memberView, props: true }
 ]

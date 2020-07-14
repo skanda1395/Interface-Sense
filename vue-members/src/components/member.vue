@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     showDetails() {
-      this.$router.push({ name: 'memberView', params: { member: this.member }});
+      this.$router.push('/' + this.ID, );
     }
   },
   computed: {
