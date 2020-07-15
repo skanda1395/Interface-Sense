@@ -5,13 +5,11 @@
 </template>
 
 <script>
-export default {
-  
-}
+export default {};
 </script>
 
 <style>
-  body {
-    font-family: 'Source Sans Pro', sans-serif;
-  } 
+body {
+  font-family: "Source Sans Pro", sans-serif;
+}
 </style>
