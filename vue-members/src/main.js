@@ -12,10 +12,8 @@ Vue.use(VueRouter);
 
 const router = new VueRouter({
   routes: Routes,
-  mode: 'history'
 })
 
-// export const eventBus = new Vue();
 
 new Vue({
   router,
