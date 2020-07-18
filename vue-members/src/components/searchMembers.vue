@@ -30,7 +30,7 @@
     <!-- Search Box -->
     <div class="container">
       <div class="row">
-        <div class="col-lg-6 px-3" id="searchDiv">
+        <div class="col-lg-12 px-3" id="searchDiv">
           <div class="input-group input-group-sm my-3">
             <div class="input-group-prepend">
               <span
@@ -67,6 +67,7 @@
           id="member.memberId"
           :key="member.memberId"
           @fillName="autocompleteName($event)"
+          :toMute="mute"
         ></member>
         <p class="text-center text-monospace" v-show="memberCount == 0">
           No such member
@@ -89,7 +90,8 @@ export default {
       inputName: "",
       selectedTab: "First Name",
       focus: false,
-      memberCount: null
+      memberCount: null,
+      mute: null
     };
   },
   methods: {
@@ -101,20 +103,20 @@ export default {
 
       for (let i = 0; i < members.length; i++) {
         let nameTag;
-        if(this.selectedTab == "First Name") {
+        if (this.selectedTab == "First Name") {
           nameTag = members[i].querySelector("#firstName");
-        }
-        else if (this.selectedTab == "Last Name") {
+        } else if (this.selectedTab == "Last Name") {
           nameTag = members[i].querySelector("#lastName");
-        }
-        else {
+        } else {
           nameTag = members[i].querySelector("#firmName");
         }
-        
+
         if (nameTag.textContent.toUpperCase().indexOf(filterValue) > -1) {
-          // console.log(members[i]);
+          this.mute= false;
           members[i].style.display = "";
+          nameTag.textContent.replace(new RegExp(filterValue, 'gi'), (match) => `<mark>${match}</mark>`)
         } else {
+          this.mute = true;
           members[i].style.setProperty("display", "none", "important");
           this.memberCount--;
         }
@@ -144,37 +146,42 @@ export default {
   },
   computed: {
     sortMembers() {
-      console.log('called to sort');
-      if(!this.membersData) return;
+      console.log("called to sort");
+      if (!this.membersData) return;
 
-      let tab = (this.selectedTab == "First Name")? "firstName": (this.selectedTab == "Last Name")? "lastName": "firmName";
+      let tab =
+        this.selectedTab == "First Name"
+          ? "firstName"
+          : this.selectedTab == "Last Name"
+          ? "lastName"
+          : "firmName";
       let arr = [...this.membersData];
 
       return arr.sort(function(a, b) {
-        if(a[tab] > b[tab]) return 1;
-        else if(a[tab] < b[tab]) return -1;
+        if (a[tab] > b[tab]) return 1;
+        else if (a[tab] < b[tab]) return -1;
         else return 0;
       });
     }
   },
   created() {
     fetch("http://164.52.195.248:8062/members")
-    .then(response => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      return response.json();
-    })
-    .then(data => {
-      this.membersData = data;
-      console.log('set data');
-    })
-    .catch(error => {
-      console.error(
-        "There has been a problem with your fetch operation:",
-        error
-      );
-    });
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then(data => {
+        this.membersData = data;
+        console.log("set data");
+      })
+      .catch(error => {
+        console.error(
+          "There has been a problem with your fetch operation:",
+          error
+        );
+      });
   }
 };
 </script>
@@ -316,6 +323,9 @@ nav a {
   font-size: 0.9rem;
   color: #6b6a6ae6;
   font-weight: 600;
+}
+.tab {
+  cursor: pointer;
 }
 
 .tab::after {
