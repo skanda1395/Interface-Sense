@@ -98,7 +98,12 @@
     <script src="assets/js/plugins/jquery-circle-progress/circle-progress.min.js"></script>
     <!-- Base Js File -->
     <script src="assets/js/base.js"></script>
-
+    <script>
+      $('form').on('submit', function(e) {
+        e.preventDefault();
+        window.location.replace('/thank-you.html')       
+      })
+    </script>
 
 </body>
 

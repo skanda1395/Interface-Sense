@@ -43,6 +43,6 @@ $(function() {
 
   
 
-  $('#contact-form').submit(() => alert('Thank you'));
+  // $('#contact-form').submit(() => alert('Thank you'));
 
 })
