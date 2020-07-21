@@ -20,9 +20,9 @@ let member = {
   computed: {
     profile_pic() {
       if (this.member.gender == "Female") {
-        return '/assets/woman_1.png';
+        return './assets/woman_1.png';
       } else {
-        return '/assets/man_1.png';
+        return './assets/man_1.png';
       }
     }
   },
