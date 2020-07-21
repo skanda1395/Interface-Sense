@@ -67,7 +67,6 @@
           id="member.memberId"
           :key="member.memberId"
           @fillName="autocompleteName($event)"
-          :toMute="mute"
         ></member>
         <p class="text-center text-monospace" v-show="memberCount == 0">
           No such member
@@ -90,8 +89,7 @@ export default {
       inputName: "",
       selectedTab: "First Name",
       focus: false,
-      memberCount: null,
-      mute: null
+      memberCount: null
     };
   },
   methods: {
@@ -112,11 +110,8 @@ export default {
         }
 
         if (nameTag.textContent.toUpperCase().indexOf(filterValue) > -1) {
-          this.mute= false;
           members[i].style.display = "";
-          nameTag.textContent.replace(new RegExp(filterValue, 'gi'), (match) => `<mark>${match}</mark>`)
         } else {
-          this.mute = true;
           members[i].style.setProperty("display", "none", "important");
           this.memberCount--;
         }

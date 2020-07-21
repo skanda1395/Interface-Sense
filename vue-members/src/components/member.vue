@@ -2,7 +2,6 @@
   <div
     class="d-flex border-bottom py-2 align-items-center member"
     @click="autocompleteName"
-    :class="{'text-muted': toMute}"
   >
     <div class=" d-flex align-items-center img-container">
       <img :src="profile_pic" alt="profile_pic" />
@@ -25,7 +24,7 @@
 
 <script>
 export default {
-  props: ["member", 'toMute'],
+  props: ["member"],
   data() {
     return {
       ID: this.member.memberId
