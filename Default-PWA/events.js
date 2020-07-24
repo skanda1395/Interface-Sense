@@ -6,10 +6,10 @@ Vue.component('event', {
       <div class="in">
         <div>
           <header>{{ event.city }}</header> {{ event.eventName }}
-          <footer>30 Members</footer>
+          <footer>{{ eventDate() }}, {{ event.eventStartTime }}</footer>
         </div>
-        <footer>{{ eventDate() }},
-          <br> {{ event.eventStartTime }} </footer> <span class="text-muted">{{ event.eventStatus }}</span> </div>
+        <footer>
+          <br> </footer> <span :class="eventColour">{{ event.eventStatus }}</span> </div>
     </a>
   </li>
   `,
@@ -19,6 +19,19 @@ Vue.component('event', {
       let date = new Date(this.event.eventDate);
       return `${date.getDate()}th ${months[date.getMonth()]}`;
     }
+  },
+  computed: {
+    eventColour() {
+      if (this.event.eventStatus == "Upcoming") {
+        return 'text-warning';
+      }
+      else if(this.event.eventStatus == "Concluded") {
+        return 'text-primary';
+      }
+      else {
+        return 'text-danger';
+      }
+    }
   }
 });
 
@@ -26,9 +39,12 @@ Vue.component('event', {
 const app = new Vue({
   el: "#appCapsule",
   data: {
+    all: [],
     upcoming: [],
     concluded: [],
     cancelled: [],
+    // statusColour:['text-warning', 'text-primary', 'text-danger'],
+    // eventColour: ""
   },
   created() {
     fetch("http://164.52.195.248:8062/event")
@@ -39,8 +55,8 @@ const app = new Vue({
         return response.json();
       })
       .then(data => {
-        console.log(data[0]);
-        for (let event of data) {
+        this.all = data;
+        for (let event of this.all) {
           if(event.eventStatus == "Upcoming") {
             this.upcoming.push(event);
           }
@@ -58,10 +74,9 @@ const app = new Vue({
           error
         );
       });
-  },
-  computed: {
-    all() {
-      return [...this.upcoming, ...this.concluded];
-    }
   }
-})
+});
+
+// upcoming - orange
+// concluded - blue
+// cancelled - red

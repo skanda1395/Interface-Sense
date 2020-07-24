@@ -1,0 +1,8 @@
+   
+.image-listview > li:after {
+  left: 0;
+}
+
+.listview span {
+  font-size: 13px !important;
+}

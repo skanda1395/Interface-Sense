@@ -14,6 +14,7 @@
     <link rel="icon" type="image/png" href="assets/img/Pune-B2B.png" sizes="32x32">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icon/192x192.png">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="./events.css">
     <link rel="manifest" href="__manifest.json">
 </head>
 
@@ -72,36 +73,39 @@
         <div id="appCapsule" class="">
 
 
-            <div class="tab-content mt-1">
+            <div class="tab-content">
 
 
                 <!-- photos tab -->
                 <div class="tab-pane fade show active" id="photos" role="tabpanel">
-                    <div class="section full mt-1">
+                    <div class="section full">
                         <ul class="listview image-listview">
                             <event v-for="event in all" :event="event"></event>
+                            <p class="my-2 text-center" v-if="!all.length">No Events</p>
                         </ul>
                     </div>
                 </div>
                 <!-- * photos tab -->
 
-                
-                
+
+
                 <!-- videos tab -->
                 <div class="tab-pane fade" id="videos" role="tabpanel">
-                    <div class="section full mt-1">
+                    <div class="section full">
                         <ul class="listview image-listview">
                             <event v-for="event in upcoming" :event="event"></event>
                         </ul>
+                        <p class="my-2 text-center" v-if="!upcoming.length">No Events</p>
                     </div>
                 </div>
                 <!-- * videos tab -->
 
                 <!-- audios tab -->
                 <div class="tab-pane fade" id="audios" role="tabpanel">
-                    <div class="section full mt-1">
+                    <div class="section full">
                         <ul class="listview image-listview">
                             <event v-for="event in concluded" :event="event"></event>
+                            <p class="my-2 text-center" v-if="!concluded.length">No Events</p>
                         </ul>
                     </div>
                 </div>
