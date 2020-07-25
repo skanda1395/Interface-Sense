@@ -2,7 +2,7 @@ Vue.component('event', {
   props: ["event"],
   template: `
   <li>
-    <a href="#" class="item">
+    <a href="./eventDetails.html" class="item" @click="showEventDetails">
       <div class="in">
         <div>
           <header>{{ event.city }}</header> {{ event.eventName }}
@@ -18,6 +18,14 @@ Vue.component('event', {
       let months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
       let date = new Date(this.event.eventDate);
       return `${date.getDate()}th ${months[date.getMonth()]}`;
+    },
+    showEventDetails() {
+      if (typeof(Storage) !== "undefined") {
+        localStorage.eventDetails = JSON.stringify(this.event);
+      } else {
+        // Sorry! No Web Storage support..
+        console.log('Cannot store local storage');
+      }
     }
   },
   computed: {
@@ -43,8 +51,6 @@ const app = new Vue({
     upcoming: [],
     concluded: [],
     cancelled: [],
-    // statusColour:['text-warning', 'text-primary', 'text-danger'],
-    // eventColour: ""
   },
   created() {
     fetch("http://164.52.195.248:8062/event")
