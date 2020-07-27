@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+    
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Wellness App</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- Banner -->
+      <div class="p-2 text-center" id="banner">
+        Together we can make a difference! Please wear masks, wash frequently & check the app
+      </div>
+      
+      <!-- Header with side nav -->
+      <header class="d-flex justify-content-between align-items-center py-2 px-3">
+        <button class="btn p-0" @click="openNav">
+          <ion-icon name="menu-outline" id="menu_icon"></ion-icon>
+        </button>
+        
+        <nav :style="{ width: navWidth }">
+          <a href="#" @click="closeNav" id="closebtn">
+            <ion-icon name="close-outline"></ion-icon>
+          </a>
+          <div class="container pt-5">
+            <a href="#">Home</a>
+            <a href="#">App Store</a>
+            <div class="input-group py-3 border-bottom">
+              <div class="input-group-prepend">
+                <span class="input-group-text border-0 " id="basic-addon1">
+                  <ion-icon name="search-outline" id="search_icon"></ion-icon>
+                </span>
+              </div>
+              <input type="search" class="form-control border-0" id="searchbox" placeholder="Search Products" aria-describedby="basic-addon1">
+            </div>
+            <a href="#">Account</a>
+            <a href="#">Sign In</a>
+            <a href="#">Order</a>
+            <a href="#">My Account</a>
+          </div>
+        </nav>
+        
+        <a class="navbar-brand m-0" href="#">
+          <img src="./assets/logo.webp" alt="brand_logo" loading="lazy">
+        </a>      
+        
+        <ion-icon id="cart_icon" name="cart-outline"></ion-icon>
+      </header>
+
+
+    </div>
+
+    
+    
+
+    
+
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!-- Ion Icons -->
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./main.js"></script>
+  </body>
+  </html>

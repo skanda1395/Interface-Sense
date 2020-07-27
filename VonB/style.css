@@ -1,0 +1,85 @@
+:root {
+  --primary: #4CA645;
+}
+
+body {
+  font-family: 'Josefin Sans', Arial, sans-serif;
+}
+
+#banner {
+  background: var(--primary);
+  font-size: 0.9em;
+}
+
+#cart_icon, #menu_icon {
+  font-size: 1.5rem !important;
+}
+
+#cart_icon {
+  position: relative;
+  bottom: 2px;
+}
+
+nav {
+  height: 100%;
+  width: 0;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.3s;
+  opacity: 0.9;
+  padding-top: 15px;
+}
+
+nav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #fff;
+  display: block;
+  transition: 0.1s;
+  border-bottom: 1px solid #adb5bd24;
+  padding: 16px 24px;
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+
+nav #closebtn {
+  position: absolute;
+  top: 5px;
+  right: 0.5px;
+  font-size: 32px;
+  margin-left: 50px;
+  border: 0;
+}
+
+.container .input-group { 
+  border-bottom: 1px solid #adb5bd24 !important;
+}
+
+#basic-addon1, #searchbox {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+#search_icon {
+  color: #000;
+  font-size: 20px;
+}
+
+input[type="search"]:hover {
+  border: 1px solid #fff;
+  box-shadow: none;
+}
+
+.navbar-brand img {
+  height: 80px;
+}
+
+header button:focus {
+  box-shadow: none !important; 
+}
