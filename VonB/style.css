@@ -3,6 +3,7 @@
   --danger: #FD2D55;
   --moderate: #FFBB22;
   --safe: #4CA645;
+  --brand_blue: #223A9B;
 }
 
 body {
@@ -147,7 +148,7 @@ header button:focus {
 
 
 #download p {
-  color: #223A9B;
+  color: var(--brand_blue);
   font-size: 1.125em;
 }
 
@@ -191,4 +192,28 @@ footer {
 footer h5 {
   font-size: 0.8em;
   line-height: 1.8;
+}
+
+/* modal popup  */
+.modal-header img {
+  width: 22px;
+  height: auto;
+  stroke: black;
+}
+
+.modal-body h4, .modal-body h3, p.tagline {
+  color: var(--brand_blue);
+}
+
+.modal-body img {
+  width: 100px;
+  height: auto;
+}
+
+.modal-body h3 span {
+  color: var(--safe);
+}
+
+.modal-body h3 {
+  letter-spacing: 4px;
 }

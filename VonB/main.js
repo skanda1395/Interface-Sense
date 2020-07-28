@@ -10,5 +10,8 @@ const app = new Vue({
     closeNav() {
       this.navWidth = "0%";
     }
+  },
+  mounted() {
+    setTimeout(() => $("#myModal").modal("show"), 5000);
   }
 });
