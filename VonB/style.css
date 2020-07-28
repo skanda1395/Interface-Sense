@@ -1,6 +1,8 @@
 :root {
   --primary: #4CA645;
   --danger: #FD2D55;
+  --moderate: #FFBB22;
+  --safe: #4CA645;
 }
 
 body {
@@ -85,22 +87,64 @@ header button:focus {
   box-shadow: none !important; 
 }
 
-#risk_section p {
+/* risk section 1  */
+#risk_section1 p {
   margin: 0;
 }
 
-#risk_section img {
+#risk_section1 img {
   width: 50px;
   height: auto;
 }
 
-#risk_section {
+#risk_section1 {
   border: 1px solid var(--danger);
 }
 
-#status_description > :first-child {
+#status_description1 > :first-child {
   color: var(--danger);
 }
+/*  risk section 1 ends */
+
+/* risk section 2  */
+#risk_section2 p {
+  margin: 0;
+}
+
+#risk_section2 img {
+  width: 50px;
+  height: auto;
+}
+
+#risk_section2 {
+  border: 1px solid var(--moderate);
+}
+
+#status_description2 > :first-child {
+  color: var(--moderate);
+}
+/*  risk section 2 ends */
+
+/* risk section 3  */
+#risk_section3 p {
+  margin: 0;
+}
+
+#risk_section3 img {
+  width: 50px;
+  height: auto;
+}
+
+#risk_section3 {
+  border: 1px solid var(--safe);
+}
+
+#status_description3 > :first-child {
+  color: var(--safe);
+}
+/*  risk section 3 ends */
+
+
 
 #download p {
   color: #223A9B;
