@@ -1,5 +1,6 @@
 :root {
   --primary: #4CA645;
+  --danger: #FD2D55;
 }
 
 body {
@@ -11,7 +12,7 @@ body {
   font-size: 0.9em;
 }
 
-#cart_icon, #menu_icon {
+#cart_icon, #menu_icon, #apple_icon {
   font-size: 1.5rem !important;
 }
 
@@ -31,7 +32,7 @@ nav {
   overflow-x: hidden;
   transition: 0.3s;
   opacity: 0.9;
-  padding-top: 15px;
+  padding-top: 10px;
 }
 
 nav a {
@@ -82,4 +83,68 @@ input[type="search"]:hover {
 
 header button:focus {
   box-shadow: none !important; 
+}
+
+#risk_section p {
+  margin: 0;
+}
+
+#risk_section img {
+  width: 50px;
+  height: auto;
+}
+
+#risk_section {
+  border: 1px solid var(--danger);
+}
+
+#status_description > :first-child {
+  color: var(--danger);
+}
+
+#download p {
+  color: #223A9B;
+  font-size: 1.125em;
+}
+
+#download button {
+  background-color: #000;
+}
+
+#playstore_icon {
+  width: 23px;
+  height: auto;
+}
+
+.list-group-item {
+  padding: 0;
+  border: 0;
+  color:  #999;
+}
+
+.list-group-item::before {
+  content: "- "
+}
+
+#disclaimer p { 
+  color: #999;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+}
+
+#insta_logo {
+  background: white;
+  width: 27px;
+  height: auto;
+  padding: 4px;
+  border-radius: 50%;
+  margin-left: 5px;
+}
+
+footer h5 {
+  font-size: 0.8em;
+  line-height: 1.8;
 }
