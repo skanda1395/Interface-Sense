@@ -217,3 +217,7 @@ footer h5 {
 .modal-body h3 {
   letter-spacing: 4px;
 }
+
+.modal-body p:last-child {
+  color: #999;
+}
