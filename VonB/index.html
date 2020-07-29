@@ -83,18 +83,23 @@
         <img src="./assets/green_siren.svg" alt="green_siren">
       </section>
 
+      <!-- Download Section -->
       <section class="container" id="download">
         <p class="text-center font-weight-bold">Download the VonB app to check and maintain your social risk status</p>
-        <div class="d-flex mt-3" id="download_btns">
-          <button class="btn text-white mr-2">
-            <ion-icon class="float-left" name="logo-apple" id="apple_icon"></ion-icon>
-            <span class="small">Download on the</span>
-            <span>App Store</span>
+        <div class="d-flex justify-content-around mt-3" id="download_btns">
+          <button class="btn text-white p-1 d-flex align-items-center mr-2">
+            <img src="./assets/logo-apple.svg" alt="apple_logo" class="btn_img">
+            <div id="download_btn_text" class="d-flex flex-column">
+              <span class="small">Download on the</span>
+              <span class="storeName">App Store</span>
+            </div>
           </button>
-          <button class="btn text-white">
-            <img id="playstore_icon" src="./assets/play_store_logo.svg" alt="play_store_logo">
-            <span class="small">Download from</span>
-            <span>Google Play</span>
+          <button class="btn text-white p-1 d-flex align-items-center">
+            <img src="./assets/play_store_logo.svg" alt="apple_logo" class="btn_img">
+            <div id="download_btn_text" class="d-flex flex-column">
+              <span class="small">Download from</span>
+              <span class="storeName">Google Play</span>
+            </div>
           </button>
         </div>
       </section>
@@ -131,7 +136,7 @@
       <!-- Modal Popup -->
       <div class="modal" id="myModal">
         <div class="model-dialog modal-dialog-centered">
-          <div class="modal-content mx-4">
+          <div class="modal-content mx-2">
             <div class="modal-header border-0 py-3">
               <button type="button" class="close p-2" data-dismiss="modal">
                 <img src="./assets/close-circle-outline.svg" alt="modal_close_icon">
@@ -147,17 +152,21 @@
               <p class="tagline">Be Socially Responsible!</p>
               <p class="small m-0">Download the VonB app to check and maintain your social risk status. And even check a location risk before your go.</p>
             </div>
-            <section class="container modal-footer border-0" id="download">
-              <div class="d-flex" id="download_btns">
-                <button class="btn text-white mr-2">
-                  <ion-icon class="float-left" name="logo-apple" id="apple_icon"></ion-icon>
-                  <span class="small">Download on the</span>
-                  <span>App Store</span>
+            <section class="py-2 my-2 border-0 d-flex justify-content-center" id="download">
+              <div class="d-flex justify-content-around" id="download_btns">
+                <button class="btn text-white p-1 d-flex align-items-center mr-2">
+                  <img src="./assets/logo-apple.svg" alt="apple_logo" class="btn_img">
+                  <div id="download_btn_text" class="d-flex flex-column">
+                    <span class="small">Download on the</span>
+                    <span class="storeName">App Store</span>
+                  </div>
                 </button>
-                <button class="btn text-white">
-                  <img id="playstore_icon" src="./assets/play_store_logo.svg" alt="play_store_logo">
-                  <span class="small">Download from</span>
-                  <span>Google Play</span>
+                <button class="btn text-white p-1 d-flex align-items-center">
+                  <img src="./assets/play_store_logo.svg" alt="apple_logo" class="btn_img">
+                  <div id="download_btn_text" class="d-flex flex-column">
+                    <span class="small">Download from</span>
+                    <span class="storeName">Google Play</span>
+                  </div>
                 </button>
               </div>
             </section>
