@@ -122,15 +122,17 @@
           <button class="btn d-flex flex-column">
             <i class="btn-shadow material-icons rounded-circle btn-bg-1">bookmark_border</i>
           </button>
-          <span>Attendance</span>
+          <span>Register</span>
         </div>
       </div>
       <!-- * CTA Buttons -->
       
       <div class="container" id="register">
-        <button class="btn btn-primary">Register</button>
+        <button class="btn btn-primary" @click="markAttendance">Mark Attendance</button>
       </div>
       
+      <!-- Attendance Update -->
+      <!-- <p class="container border mt-4 px-2" v-if="attendanceMarked">{{ attendanceMsg }}</p> -->
     </div>
     <!-- * App Capsule -->
     
