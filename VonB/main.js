@@ -3,8 +3,8 @@ const app = new Vue({
   data: {
     navWidth: "0%",
     riskStatus: "",
-    networkError: true,
-    codeExpired: true
+    networkError: null,
+    codeExpired: null
   },
   methods: {
     openNav() {
@@ -12,12 +12,19 @@ const app = new Vue({
     },
     closeNav() {
       this.navWidth = "0%";
+    },
+    openAS() {
+      window.location.href = "./comingSoon.html";
+    },
+    openGP() {
+      window.location.href = "https://play.google.com/store/apps/details?id=com.vonb.harry";
     }
   },
   created() {
     // Get the hash from the URL
     let url_string = window.location.href;
     let hash = new URL(url_string).hash;
+    console.log(hash);
 
     // Fetch data associated with the retrieved hash to display risk status
     fetch("https://us-central1-vonb-app.cloudfunctions.net/userDataforQrcode?qrcode=" + hash)
@@ -32,6 +39,8 @@ const app = new Vue({
         console.log(this.riskStatus);
       })
       .catch(error => {
+        this.riskStatus = null;
+        this.networkError = true;
         console.error(
           "There has been a problem with your fetch operation:",
           error
