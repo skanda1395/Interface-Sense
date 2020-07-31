@@ -27,19 +27,19 @@ const app = new Vue({
     console.log(hash);
 
     // Fetch data associated with the retrieved hash to display risk status
-    fetch("https://us-central1-vonb-app.cloudfunctions.net/userDataforQrcode?qrcode=" + hash)
+    fetch("https://us-central1-vonb-app.cloudfunctions.net/userDataforQrcode?qrcode=" + hash.slice(1))
       .then(response => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
-        return response.text();
+        return response.json();
       })
       .then(data => {
-        this.riskStatus = data.split(' ')[0];
+        this.riskStatus = data.risk;
+        if(!this.riskStatus) this.codeExpired = true;
         console.log(this.riskStatus);
       })
       .catch(error => {
-        this.riskStatus = null;
         this.networkError = true;
         console.error(
           "There has been a problem with your fetch operation:",
