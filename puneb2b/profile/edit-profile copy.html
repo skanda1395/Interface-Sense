@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="images/favicon.png">
+
+    <title>Edit Profile</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    -- <link rel="stylesheet" href="css/fakeLoader.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> 
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="override.css">
+    <!--vue script-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <!-- fakeloader -->
+    <div class="fakeLoader"></div>
+    <!-- end fakeloader -->
+
+    <!-- navbar -->
+    <div class="navbar">
+        <div class="left">
+            <a href="" class="link link-back"><i class="icon ion-ios-arrow-back"></i></a>
+        </div>
+        <div class="title">
+            Edit Profile
+        </div>
+        <div class="right">
+            <a href="#"><i class="fas fa-pen"></i></a>
+        </div>
+    </div>
+    <!-- end navbar -->
+
+    <!-- pages wrapper -->
+    <div class="pages-wrapper">
+
+        <!-- separator -->
+        <div class="separator-small"></div>
+        <!-- end separator -->
+
+        <!-- profile -->
+        <div class="profile">
+            <div class="text-center">
+                <img src="images/girl-slay.jpg" class="rounded-circle image-prof" alt="">
+                <button class=" button-outline change-photo-btn">Replace</button>
+                <input type="file" class="file-upload" id="inputFile">
+            </div>
+            <!-- Personal details tag -->
+            <form class="form-fill container">
+                <div class="row">
+                    <div class="col-12 add-det">Personal Details
+                        <!-- <hr class="hr-1"> -->
+                    </div>
+                    <!-- <div class="col-7">
+                        <hr>
+                    </div> -->
+                </div>
+
+                <!-- Fake Form starts -->
+                <div class="row row-dec">
+                    <!-- Name -->
+                    <div class="col-1"></div>
+                    <div class="col-11">
+                        <p class="first-p">&nbsp;</p>
+                    </div>
+                    <div class="col-1 space-less-form"><i class="fas fa-user"></i></div>
+                    <div class="col-11 con">
+                        <input type="text" class="inp inp-1 " placeholder="Add Name" v-model="firstName" required>
+                        <i class="fas fa-times-circle cross-1"></i>
+                    </div>
+                    <!-- Phone -->
+                    <div class="col-1"></div>
+                    <div class="col-11">
+                        <p class="sec-p">&nbsp;</p>
+                    </div>
+                    <div class="col-1"><i class="fas fa-phone-alt"></i></div>
+                    <div class="col-11 con">
+                        <input type="tel" class="inp inp-2" placeholder="Add Phone No" pattern="[0-9]{10}"
+                            title="Phone number should be 10 digit long" v-model="number" required>
+                        <i class="fas fa-times-circle cross-2"></i>
+                    </div>
+                    <!-- Mail Address -->
+                    <div class="col-1"></div>
+                    <div class="col-11">
+                        <p class="third-p">&nbsp;</p>
+                    </div>
+                    <div class="col-1"><i class="far fa-envelope"></i></div>
+                    <div class="col-11 con">
+                        <input type="email" class=" inp inp-3" placeholder="Add Email" v-model="email">
+                        <i class="fas fa-times-circle cross-3"></i>
+                    </div>
+                </div>
+                <!-- Personal address tag -->
+                <div class="row">
+                    <div class="col-12 add-det">Personal Address
+                        <!-- <hr class="hr-2"> -->
+                    </div>
+                    <!-- <div class="col-8">
+                        <hr>
+                    </div> -->
+                </div>
+
+                <div class="row row-dec">
+                    <!-- Address -->
+                    <div class="col-1"></div>
+                    <div class="col-11">
+                        <p class="fourth-p">&nbsp;</p>
+                    </div>
+                    <div class="col-1"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="col-11 con">
+                        <input type="text" class="inp inp-4" placeholder="Add Address" v-model="adress">
+                        <i class="fas fa-times-circle cross-4"></i>
+                    </div>
+                </div>
+                <!-- Work details tag -->
+                <div class="row">
+                    <div class="col-12 add-det">Work Details
+                        <!-- <hr class="hr-3"> -->
+                    </div>
+                    <!-- <div class="col-8">
+                        <hr>
+                    </div> -->
+                </div>
+                <div class="row row-dec">
+                    <!-- Work Name -->
+                    <div class="col-1"></div>
+                    <div class="col-11">
+                        <p class="fifth-p">&nbsp;</p>
+                    </div>
+                    <div class="col-1"><i class="fas fa-briefcase"></i></div>
+                    <div class="col-11 con">
+                        <input type="text" class="inp  inp-5" placeholder="Add your firm name" v-model="fname">
+                        <i class="fas fa-times-circle cross-5"></i>
+                    </div>
+                    <!-- Work Address -->
+                    <div class="col-1"></div>
+                    <div class="col-11">
+                        <p class="sixth-p">&nbsp;</p>
+                    </div>
+                    <div class="col-1"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="col-11 con">
+                        <input type="text" class="inp  inp-6" placeholder="Add Firm Address" v-model="fadress">
+                        <i class="fas fa-times-circle cross-6"></i>
+                    </div>
+                </div>
+                
+
+
+                <div class="row">
+                    
+                    <div  class="col-12 submit-col-12">
+                        <a class="a-tag-submit"  href="thank-you.html" ><input @click="updateUser" type="submit" id="submit_form_button" ></a>
+                    </div>
+                    
+                </div>
+            </form>
+        </div>
+        <!-- end profile -->
+
+    </div>
+    <!-- end pages wrapper -->
+    
+
+    
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="js/fakeLoader.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="profile-script.js"></script>
+    <script>
+        new Vue({
+          el: ".profile",
+          data: {
+            firstName: "...",
+            lastName: "...",
+            number: "...",
+            email: "...",
+            adress:"...",
+            fname:"...",
+            fadress:"...",
+            users: [],
+            i: 0
+          },
+          methods: {
+            getData() {
+              fetch("http://164.52.195.248:8062/members")
+                .then(response => {
+                  if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                  }
+                  return response.json();
+                })
+                .then(data => {
+                  this.users = data;
+                  this.anotherUser(this.i);
+                })
+                .catch(error => {
+                  console.error(
+                    "There has been a problem with your fetch operation:",
+                    error
+                  );
+                });
+            },
+            anotherUser() {
+              this.firstName = this.users[this.i].firstName;
+              this.lastName = this.users[this.i].lastName;
+              this.email= this.users[this.i].emailId;
+              this.number = this.users[this.i].mobileNo;
+              this.adress = this.users[this.i].businessAddressLine2;
+              this.fadress = this.users[this.i].businessAddressLine1;
+              this.fname = this.users[this.i].firmName;
+              this.i++;
+            },
+            updateUser() {
+              const userData = this.users[this.i - 1];
+              userData.firstName = this.firstName;
+              userData.lastName = this.lastName;
+              userData.email = this.email;
+              userData.mobileNo = this.number;
+              userData.businessAddressLine2 = this.adress;
+              userData.businessAddressLine1 = this.fadress;
+              userData.firmName = this.fname;
+              //console.log(userData.fadress);
+  
+              fetch('http://164.52.195.248:8062/members', {
+                method: 'PUT', // or 'PUT'
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(userData),
+              })
+              .then(response => response.json())
+              .then(data => {
+                console.log('Success:', data);
+              })
+              .catch((error) => {
+                console.error('Error:', error);
+              });
+            }
+          },
+          mounted: function() {
+            this.getData();
+          }
+        });
+      </script>
+    
+
+    
+
+</body>
+
+</html>

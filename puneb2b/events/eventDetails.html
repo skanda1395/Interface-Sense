@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <title>Pune B2B Development</title>
+    <meta name="description" content="Mobilekit HTML Mobile UI Kit">
+    <meta name="keywords" content="bootstrap 4, mobile template, cordova, phonegap, mobile, html" />
+    <link rel="icon" type="image/png" href="assets/img/Pune-B2B.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icon/192x192.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <!-- <link rel="stylesheet" href="./events.css"> -->
+    <link rel="manifest" href="__manifest.json">
+  </head>
+  <style>
+    #eventDetails ion-icon {
+      /* color: lightskyblue !important; */
+      margin-right: 5px;
+      position: relative;
+      top: 2px;
+    }
+    #ctaBtns i {
+      font-size: 1.2em;      
+    }
+    .btn-bg-1 {
+      padding: 8px;
+      color: grey;
+      background-color: #e6e7e9;
+    }
+    .btn-shadow {
+      box-shadow: -1px 2px 8px 1px #888;
+    }
+    .button span {
+      font-size: 0.9em;
+    }
+    #register button {
+      font-size: 1em;
+      width: 100%;
+    }
+  </style>
+  <body>
+
+    <!-- loader -->
+    <div id="loader">
+      <div class="spinner-border text-primary" role="status"></div>
+    </div>
+    <!-- * loader -->
+
+    <!-- App Header -->
+    <div class="appHeader">
+      <div class="left">
+        <a href="./events.html" class="headerButton">
+            <ion-icon name="chevron-back-outline"></ion-icon>
+        </a>
+      </div>
+      <div class="pageTitle text-uppercase font-weight-bold">Event Details</div>
+    </div>
+    <!-- * App Header -->
+
+
+
+    <!-- App Capsule -->
+    <div id="appCapsule">
+      <!-- Container -->
+      <div class="container">
+        <div id="eventDetails" class="border-bottom">
+          <h3 class="mt-2">{{ event.eventName }}</h3>
+          <p class="text-muted mb-1">
+            <ion-icon name="calendar" class="text-primary"></ion-icon>
+            <span>
+              {{ event.eventDate }} [{{ event.eventStartTime }}-{{ event.eventEndTime }}]
+            </span>
+          </p>
+          <p class="text-muted mb-1">
+            <ion-icon name="location" class="text-primary"></ion-icon>
+            <span>
+              XYZ Location, {{ event.city }}       
+            </span>
+          </p>
+          <p class="text-muted mb-1">
+            <ion-icon name="call" class="text-primary"></ion-icon>
+            <span>
+              +91-{{ event.phoneNo }}  
+            </span>
+          </p>
+          <p class="text-muted mb-1">
+            <ion-icon name="business" class="text-primary"  ></ion-icon>
+            <span>
+             Event: Alpha  
+            </span>
+          </p>
+        </div>
+        <div id="agenda" class="border border-primary mt-2 p-1">
+          {{ event.agenda }}
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error, assumenda delectus hic, ut corrupti voluptatum quos architecto provident amet sequi doloribus dolore sed dolorem quo repellendus dolores explicabo quasi ullam.
+        </div>
+      </div>
+      <!-- * Container -->
+      
+      <!-- CTA Buttons -->
+      <div class="py-2 d-flex align-items-center justify-content-around" id="ctaBtns">
+        <div class="button d-flex flex-column align-items-center">
+          <button class="btn">
+            <i class="btn-shadow material-icons rounded-circle btn-bg-1">call</i>
+          </button>
+          <span>Call</span>
+        </div>
+        <div class="button d-flex flex-column align-items-center">
+          <button class="btn d-flex flex-column">
+            <i class="btn-shadow material-icons rounded-circle btn-bg-1">location_searching</i>
+          </button>
+          <span>Directions</span>
+        </div>
+        <div class="button d-flex flex-column align-items-center">
+          <button class="btn d-flex flex-column">
+            <i class="btn-shadow material-icons rounded-circle btn-bg-1">bookmark_border</i>
+          </button>
+          <span>Attendance</span>
+        </div>
+      </div>
+      <!-- * CTA Buttons -->
+      
+      <div class="container" id="register">
+        <button class="btn btn-primary">Register</button>
+      </div>
+      
+    </div>
+    <!-- * App Capsule -->
+    
+
+
+    <!-- ///////////// Js Files ////////////////////  -->
+    <!-- Jquery -->
+    <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap-->
+    <script src="assets/js/lib/popper.min.js"></script>
+    <script src="assets/js/lib/bootstrap.min.js"></script>
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
+    <!-- Owl Carousel -->
+    <script src="assets/js/plugins/owl-carousel/owl.carousel.min.js"></script>
+    <!-- jQuery Circle Progress -->
+    <script src="assets/js/plugins/jquery-circle-progress/circle-progress.min.js"></script>
+    <!-- Base Js File -->
+    <script src="assets/js/base.js"></script>
+    <!-- development version, includes helpful console warnings -->
+    <script src="./assets/js/lib/vue.min.js"></script>
+    <script src="./eventDetails.js"></script>
+  </body>
+</html>

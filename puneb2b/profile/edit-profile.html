@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+      .required:after {
+        content: "*";
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="app">
+      <div class="row justify-content-center">
+        <form class="col-lg-6" action="#">
+          <p class="font-weight-bold">Personal Details</p>
+    
+          <div class="form-group">
+            <label class="required" for="name">Name</label>
+            <input class="form-control" type="text" id="name" placeholder="Your full-name" v-model="fullName">
+          </div>
+          
+          <div class="form-group">
+            <label class="required" for="number">Phone Number</label>
+            <input class="form-control" type="text" id="number" placeholder="Your mobile number" v-model="number">
+          </div>
+          
+          <div class="form-group">
+            <label class="required"for="Email">Email</label>
+            <input class="form-control" type="email" id="Email" placeholder="Your email address" v-model="email">
+          </div>
+          <hr>
+    
+          <p class="font-weight-bold">Personal Address</p>
+          
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input class="form-control" type="text" id="address" placeholder="Your address" v-model="address">
+          </div>
+          <hr>
+         
+          <p class="font-weight-bold">Work Details</p>
+    
+          <div class="form-group">
+            <label for="firmName">Firm Name</label>
+            <input class="form-control" type="text" id="firmName" placeholder="Your firm-name" v-model="firmName">
+          </div>
+         
+          <div class="form-group">
+            <label for="firmAddress">Firm Address</label>
+            <input class="form-control" type="text" id="firmAddress" placeholder="Your firm-address" v-model="firmAddress">
+          </div>
+    
+          <div class="d-flex justify-content-between">
+            <button class="btn btn-primary" type="submit" @click.prevent="updateUser" :disabled="formChecker">Save Changes</button>
+            <button class="btn btn-secondary" @click="anotherUser">Next User</button>
+          </div>
+          
+        </form>
+      </div>
+    </div>
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      new Vue({
+  el: "#app",
+  data: {
+    fullName: "...",
+    number: "...",
+    email: "...",
+    address: "...",
+    firmName: "...",
+    firmAddress: "...",
+    users: [],
+    i: 0  
+  },
+  methods: {
+    getData() {
+      fetch("http://164.52.195.248:8062/members")
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then(data => {
+          console.log(data);
+          this.users = data;
+          this.anotherUser(this.i);
+        })
+        .catch(error => {
+          console.error(
+            "There has been a problem with your fetch operation:",
+            error
+          );
+        });
+    },
+    anotherUser() {
+      let user = this.users[this.i];
+      this.fullName = `${user.firstName} ${user.lastName}`;
+      this.email= user.emailId;
+      this.number = user.mobileNo;
+      this.firmName = user.firmName;
+      this.firmAddress = user.businessAddressLine1;
+      this.i++;
+    },
+    updateUser() {
+      const userData = this.users[this.i - 1];
+      let userNameArr = this.fullName.split(' ');
+
+      userData.firstName = userNameArr[0];
+      userData.lastName = userNameArr[1];
+      userData.emailId = this.email;
+      userData.mobileNo = this.number;
+      userData.firmName = this.firmName;
+      userData.businessAddressLine1 = this.firmAddress;
+
+      fetch('http://164.52.195.248:8062/members', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userData),
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+    }
+  },
+  computed: {
+    formChecker() {
+      if (this.fullName && this.number && this.email) 
+        return false;
+      else
+        return true;
+    }
+  },
+  mounted: function() {
+    this.getData();
+  }
+});
+      </script>
+  </body>
+</html>
