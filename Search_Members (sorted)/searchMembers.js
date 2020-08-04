@@ -146,6 +146,7 @@ const app = new Vue({
       })
       .then(data => {
         this.membersData = data;
+        this.focus = true;
         console.log("set data");
       })
       .catch(error => {
