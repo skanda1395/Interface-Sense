@@ -35,10 +35,10 @@ const member = {
   template: `
       <div
       class="d-flex border-bottom py-2 align-items-center member"
-      @click="autocompleteName"
+      @click="showDetails"
       >
       <div class=" d-flex align-items-center img-container">
-        <img :src="profile_pic" alt="profile_pic" />
+        <img src="./assets/default_icon.jpeg" alt="profile_pic" />
       </div>
       <div class="d-flex flex-column py-2 ml-3">
         <div class="name" id="name-container">
@@ -49,7 +49,7 @@ const member = {
           member.firmName
         }}</span>
       </div>
-      <i class="material-icons text-muted" id="forward-icon" @click="showDetails"
+      <i class="material-icons text-muted" id="forward-icon" 
         >arrow_forward_ios</i
       >
     </div>
