@@ -44,6 +44,9 @@
       font-size: 1em;
       width: 100%;
     }
+    #agenda {
+      border: 1px solid #ddd;
+    }
   </style>
   <body>
 
@@ -75,7 +78,7 @@
           <p class="text-muted mb-1">
             <ion-icon name="calendar" class="text-primary"></ion-icon>
             <span>
-              {{ event.eventDate }} [{{ event.eventStartTime }}-{{ event.eventEndTime }}]
+              {{ date() }} [{{ event.eventStartTime }}-{{ event.eventEndTime }}]
             </span>
           </p>
           <p class="text-muted mb-1">
@@ -97,15 +100,14 @@
             </span>
           </p>
         </div>
-        <div id="agenda" class="border border-primary mt-2 p-1">
-          {{ event.agenda }}
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error, assumenda delectus hic, ut corrupti voluptatum quos architecto provident amet sequi doloribus dolore sed dolorem quo repellendus dolores explicabo quasi ullam.
+        <div id="agenda" class="mt-2 p-1">
+          {{ event.agenda || "There is no Agenda for this meeting." }}
         </div>
       </div>
       <!-- * Container -->
       
       <!-- CTA Buttons -->
-      <div class="py-2 d-flex align-items-center justify-content-around" id="ctaBtns">
+      <!-- <div class="py-2 d-flex align-items-center justify-content-around" id="ctaBtns">
         <div class="button d-flex flex-column align-items-center">
           <button class="btn">
             <i class="btn-shadow material-icons rounded-circle btn-bg-1">call</i>
@@ -124,12 +126,12 @@
           </button>
           <span>Attendance</span>
         </div>
-      </div>
+      </div> -->
       <!-- * CTA Buttons -->
       
-      <div class="container" id="register">
+      <!-- <div class="container" id="register">
         <button class="btn btn-primary">Register</button>
-      </div>
+      </div> -->
       
     </div>
     <!-- * App Capsule -->
