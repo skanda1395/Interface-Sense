@@ -3,54 +3,126 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="fm.selectator.jquery.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
   <title>Add Boomerang</title>
 </head>
 <style>
-  body {
-    background: #fff;
+  .container {
+    padding: 0 10px;
+    margin: 0 auto;
   }
-  .wide-block {
-    border: 0;
+
+  form {
+    padding: 10px 0;
+  }
+  
+  .form-group {
+    margin-bottom: 10px !important;
+  }
+
+  #selectator_Members .selectator_options {
+    top: 73px !important;
+  }
+
+  #selectator_Event .selectator_options {
+    top: 30px !important;
+  }
+
+
+  input[type="text"] {
+    padding: 0 10px !important;
+    font-size: 15px;
+    height: 36px !important;
+  }
+
+  select {
+    width: 100%;
+  }
+
+  body {
+    margin: 0;
+    width: 100%; 
+    font-family: 'Inter', sans-serif;
+    background-color: white;
+  }
+
+  header {
+    height: 56px;
+    /* padding: 20px 10px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  header span {
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  header #back_icon {
+    font-size: 26px;
+    position: absolute;
+    left: 0;
+    padding: 10px;
+  }
+
+  label.req::after {
+    content: " *";
+    color: red;
   }
 </style>
 <body>
   <!-- App Header -->
-  <div class="appHeader">
-    <div class="left">
-        <a href="#" class="headerButton">
-            <ion-icon name="chevron-back-outline"></ion-icon>
-        </a>
-    </div>
-    <div class="pageTitle text-uppercase font-weight-bold">Add Boomerang</div>
-  </div>
-  <!-- * App Header -->
+  <header>
+    <ion-icon name="chevron-back-outline" id="back_icon"></ion-icon>
+    <span>Add Boomerang</span>
+  </header>
 
   <!-- App Capsule -->
-  <div id="appCapsule">
-    <div class="section full mb-2">
-      <div class="wide-block pb-1 pt-2">
-        <!-- Input fields -->
-        <form>
-          <div class="form-group basic animated">
-            <div class="input-wrapper">
-              <label class="label" for="business_amt">Business Amount</label>
-                <input type="text" class="form-control" id="business_amt" placeholder="Business Amount">
-                <i class="clear-input">
-                  <ion-icon name="close-circle"></ion-icon>
-                </i>
-            </div>
-          </div>
-
-          
-        </form>
-        <!-- * Inputs fields -->
+  <div class="container">
+    <form action="#">
+      <div class="form-group boxed">
+        <div class="input-wrapper">
+            <label class="label req" for="name2">Business Amount</label>
+            <input type="text" class="form-control" id="name2" placeholder="Business Amount" required>
+            <i class="clear-input">
+                <ion-icon name="close-circle"></ion-icon>
+            </i>
+        </div>
       </div>
-    </div>
+
+      <div class="form-group boxed">
+        <label for="Event" class="label">Reference Event</label>
+        <select id="Event">
+          <option value="sf">Event 1</option>
+          <option value="sf">Event 2</option>
+          <option value="sf">Event 3</option>
+          <option value="sf">Event 4</option>
+          <option value="s">Event 5</option>
+        </select>
+      </div>
+
+
+      <div class="form-group boxed">
+        <label for="Members" class="label req">Referenced by Member</label>
+        <select id="Members" required>
+          <option value="sdf" data-subtitle="Company Name" data-left="./assets/img/default_icon.jpeg">Member 1</option>
+          <option value="sdf" data-subtitle="Company Name" data-left="./assets/img/default_icon.jpeg">Member 2</option>
+          <option value="sdf" data-subtitle="Company Name" data-left="./assets/img/default_icon.jpeg">Member 3</option>
+          <option value="sdf" data-subtitle="Company Name" data-left="./assets/img/default_icon.jpeg">Member 4</option>
+          <option value="sdf" data-subtitle="Company Name" data-left="./assets/img/default_icon.jpeg">Member 5</option>
+        </select>
+      </div>
+
+      <button class="btn btn-primary btn-block mt-1">SUBMIT</button>
+
+    </form>
   </div>
-  <!-- * App Capsule -->
 
-
+  
 
   <!-- ///////////// Js Files ////////////////////  -->
   <!-- Ionicons -->
@@ -60,8 +132,21 @@
   <!-- Bootstrap-->
   <script src="assets/js/lib/popper.min.js"></script>
   <script src="assets/js/lib/bootstrap.min.js"></script>
-  <!-- Base Js File -->
-  <script src="assets/js/base.js"></script>
-  <!-- <script src="tail.select-full.min.js "></script> -->
+  <!-- selectator JS file -->
+  <script src="fm.selectator.jquery.js"></script>
+  <!-- base js -->
+  <script src="./assets/js/base.js"></script>
+  <!-- <script src="./boomerang-add.js"></script> -->
+  <script>
+    $("#Members").selectator({
+      labels: {
+        search: 'Search...' 
+    }
+    });
+
+    $("#Event").selectator({
+      useSearch: false,
+    });
+  </script>
 </body>
 </html>
