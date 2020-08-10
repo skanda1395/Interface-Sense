@@ -67,6 +67,7 @@ const app = new Vue({
   watch: {
     inputName: function(value) {
       if(!value) this.filterList();
+      $("#reference_name input").focus();
     }
   },
   created() {
