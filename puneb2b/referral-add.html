@@ -105,10 +105,10 @@
     </div>
     
     <div class="bg-white" id="list">
-        <div class="text-right mt-1 px-2">
-            <!-- <ion-icon name="close-outline" id="close_btn"></ion-icon> -->
+        <!-- <div class="text-right mt-1 px-2">
+            <ion-icon name="close-outline" id="close_btn"></ion-icon>
             <span id="close_btn">close</span>
-        </div>
+        </div> -->
         <!-- <div class="input-group">
             <div class="input-group-prepend pl-1 bg-white">
                 <span class="input-group-text border-0">
@@ -118,15 +118,16 @@
             <input type="search" class="form-control pl-0" placeholder="Search Here..." v-model="inputName" @keyup="filterList"
                     id="reference_name">
         </div> -->
-        <div class="form-group basic animated px-2">
-            <div class="input-wrapper" id="reference_name">
+        <div class="form-group basic animated px-2 d-flex justify-content-around align-items-center">
+            <div class="input-wrapper col-10 px-0" id="reference_name">
                 <label class="label" for="name2">Give reference to</label>
-                <input type="text" class="form-control" id="name2" placeholder="Give reference to" 
+                <input type="text" class="form-control" id="name2" placeholder="Search here..." 
                         v-model="inputName" @keyup="filterList">
                 <i class="clear-input" @click="clearInput">
                     <ion-icon name="close-circle"></ion-icon>
                 </i>
             </div>
+            <span class="pt-1 ml-1" id="close_btn">close</span>
         </div>
 
         <div class="mt-1">
