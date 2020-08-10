@@ -114,7 +114,8 @@
                     <ion-icon name="search-outline" id="search_icon"></ion-icon>
                 </span>
             </div>
-            <input type="search" class="form-control pl-0" placeholder="Search Here..." v-model="inputName" @keyup="filterList">
+            <input type="search" class="form-control pl-0" placeholder="Search Here..." v-model="inputName" @keyup="filterList"
+                    id="reference_name">
             <!-- <span id="clear_btn" @click=>
                 <ion-icon name="close-outline" size="small"></ion-icon>
             </span> -->
@@ -165,6 +166,7 @@
         $("#ref_list").click(function() {
             $("#list").css("position", "static");
             $(".appHeader, #appCapsule").slideUp("fast");
+            $("#reference_name").focus();
         });
         
         $("#close_btn").click(function() {
